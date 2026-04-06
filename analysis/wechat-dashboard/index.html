@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>公众号内容控制台</title>
+<style>
+:root{--bg:#f6f2ea;--panel:#fffdf8;--line:#e7dfd2;--text:#1f1d19;--muted:#70695f;--accent:#b95131;--accentSoft:#f8e4dd;--blue:#355d88;--blueSoft:#e5edf7;--green:#2f604a;--greenSoft:#e5f1eb;--gold:#a9771f;--goldSoft:#f7edd6;--shadow:0 12px 28px rgba(38,31,22,.08);--radius:18px}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:"Microsoft YaHei UI","PingFang SC","Segoe UI",sans-serif;background:linear-gradient(180deg,#fbf8f2 0%,var(--bg) 100%);color:var(--text);overflow:hidden}
+body{padding:18px}.app{height:calc(100vh - 36px);display:grid;grid-template-columns:1.45fr .92fr;gap:18px}.panel{min-height:0;background:rgba(255,253,248,.95);border:1px solid #fff;border-radius:24px;box-shadow:var(--shadow)}
+.main{padding:18px;display:grid;grid-template-rows:auto auto 1fr;gap:16px}.hero{padding:20px 22px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,#fffefb 0%,#fff8f0 100%)}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:var(--accentSoft);color:var(--accent);font-size:12px;font-weight:800}.hero h1{margin:12px 0 8px;font-size:32px;line-height:1.08}.hero p{margin:0;color:var(--muted);font-size:13px;line-height:1.7;max-width:62ch}
+.metrics{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff}.metric strong{display:block;font-size:22px}.metric span{font-size:12px;color:var(--muted)}
+.toolbar{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}.toolbar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.search{width:240px;max-width:100%;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);font-size:12px;outline:none}.search:focus{border-color:#d8b2a4;box-shadow:0 0 0 3px rgba(185,81,49,.08)}.toolbar h2,.side-head h2,.detail-head h2{margin:0;font-size:15px}.toolbar p,.side-head p,.detail-head p{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.filters,.links,.workflow-actions{display:flex;flex-wrap:wrap;gap:8px}.tabs{display:flex;flex-wrap:nowrap;gap:8px;overflow:auto;padding-bottom:2px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.chip,.tab,.action-btn{border:0;border-radius:999px;padding:8px 12px;background:#f1ece3;color:var(--text);font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap;flex:0 0 auto}.chip.active,.tab.active{background:var(--text);color:#fff}.action-btn{background:var(--accentSoft);color:var(--accent)}.action-btn.secondary{background:var(--blueSoft);color:var(--blue)}.action-btn.ghost{background:#fff;border:1px solid var(--line)}.link{display:inline-flex;padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);text-decoration:none;font-size:12px;font-weight:700}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);padding:10px 14px;border-radius:999px;background:rgba(31,29,25,.9);color:#fff;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.18s ease;z-index:99}.toast.show{opacity:1}
+.workspace{min-height:0;display:grid;grid-template-columns:1.28fr .88fr .82fr;gap:14px}.card{min-height:0;padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;display:grid;grid-template-rows:auto 1fr;gap:12px}.list{min-height:0;overflow:auto;display:grid;gap:8px;padding-right:4px}
+.topic{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fffaf4;cursor:pointer}.topic.active{border-color:#e5b3a3;background:#fff5f1}.topic:hover{box-shadow:0 8px 18px rgba(38,31,22,.05)}.topic h3{margin:8px 0 0;font-size:15px;line-height:1.45}.topic p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.meta,.detail-meta{display:flex;flex-wrap:wrap;gap:6px}.badge{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}.status-pending{background:#f1ece3}.status-draft,.status-rewrite{background:var(--blueSoft);color:var(--blue)}.status-written{background:var(--greenSoft);color:var(--green)}.status-validated{background:var(--goldSoft);color:var(--gold)}.pillar{background:var(--accentSoft);color:var(--accent)}.role{background:var(--greenSoft);color:var(--green)}
+.side-item,.block{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fffaf4}.side-item h3,.block h3{margin:0;font-size:14px;line-height:1.5}.side-item p,.block p,.block li{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.65}.block ul{margin:8px 0 0 18px;padding:0}
+.detail{padding:18px;display:grid;grid-template-rows:auto auto 1fr;gap:14px}.detail-controls{display:grid;gap:10px;padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:#fffaf4}.control-group{display:grid;gap:6px}.control-label{font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}.detail-body{min-height:0;padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden}.panels{min-height:0;height:100%;overflow:auto}.tab-panel{display:none;gap:10px}.tab-panel.active{display:grid}.scoreGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.score strong{display:block;font-size:20px}.empty{padding:16px;border:1px dashed #d8cdbc;border-radius:14px;color:var(--muted);font-size:13px;line-height:1.65;background:#fffaf4}
+@media (max-width:1320px){html,body{overflow:auto}.app{height:auto;grid-template-columns:1fr}.workspace,.metrics,.scoreGrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+  <main class="panel main">
+    <section class="hero">
+      <div class="eyebrow">一屏总览</div>
+      <h1 id="heroTitle"></h1>
+      <p id="heroDesc"></p>
+      <div class="metrics" id="metrics"></div>
+    </section>
+    <section class="toolbar">
+      <div><h2>当前题池</h2><p>左边只负责选题，右边固定看详情、评分、反馈和裂变。</p></div>
+      <div class="toolbar-actions"><input class="search" id="searchInput" type="text" placeholder="搜索选题、支柱、角色或备注" /><div class="filters" id="filters"></div></div>
+    </section>
+    <section class="workspace">
+      <section class="card"><div class="side-head"><h2>选题工作区</h2><p>优先从高优先级、草稿与重写题里推进。</p></div><div class="list" id="topicList"></div></section>
+      <section class="card"><div class="side-head"><h2>已验证样本</h2><p>写前先看结构，不直接重复题目。</p></div><div class="list" id="sampleList"></div></section>
+      <section class="card"><div class="side-head"><h2>工作流入口</h2><p>先定动作，再进具体题和详情，不用每次重新想顺序。</p></div><div class="list" id="workflowList"></div><div class="links" id="topLinks"></div><div class="list" id="clusterList"></div></section>
+    </section>
+  </main>
+  <aside class="panel detail">
+    <header class="detail-head"><div class="eyebrow">题目详情</div><h2 id="detailTitle">请选择一个题</h2><p id="detailDesc">点左侧题目后，这里会固定显示选题、历史样本、评分、反馈和裂变信息。</p></header>
+    <section class="detail-controls"><div class="control-group"><div class="control-label">Workflow</div><div class="workflow-actions" id="workflowActions"></div></div><div class="control-group"><div class="control-label">Details</div><div class="tabs" id="tabs"></div></div></section>
+    <section class="detail-body"><div class="panels" id="panels"></div></section>
+  </aside>
+</div>
+<script src="./data.js"></script>
+<script>
+const data=window.DASHBOARD_DATA;const FILTERS=[['all','全部'],['draft-rewrite','草稿 / 重写'],['pending','待写'],['validated','已验证'],['high','高优先级']];const TABS=[['topic','选题'],['history','历史'],['score','评分'],['feedback','反馈'],['cluster','裂变']];const state={filter:'all',tab:'topic',topic:null,query:''};
+const $=id=>document.getElementById(id);const heroTitle=$("heroTitle"),heroDesc=$("heroDesc"),metrics=$("metrics"),filters=$("filters"),topicList=$("topicList"),sampleList=$("sampleList"),clusterList=$("clusterList"),workflowList=$("workflowList"),topLinks=$("topLinks"),detailTitle=$("detailTitle"),detailDesc=$("detailDesc"),tabs=$("tabs"),panels=$("panels"),searchInput=$("searchInput"),workflowActions=$("workflowActions");
+const esc=v=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+const statusClass=s=>s==='草稿'?'status-draft':s==='已重写'?'status-rewrite':s==='已写'?'status-written':s==='已验证'?'status-validated':'status-pending';
+function renderHero(){heroTitle.textContent=data.meta.title;heroDesc.textContent=data.meta.description;metrics.innerHTML=data.metrics.map(m=>`<div class="metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></div>`).join("");sampleList.innerHTML=data.samples.map(s=>`<article class="side-item"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p></article>`).join("");clusterList.innerHTML=data.cluster.map(c=>`<article class="side-item"><h3>${esc(c.title)}</h3><p>${esc(c.role)}</p></article>`).join("");workflowList.innerHTML=(data.playbook||[]).map((p,index)=>`<article class="side-item"><h3>步骤 ${index+1} · ${esc(p.title)}</h3><p>${esc(p.body)}</p></article>`).join("");topLinks.innerHTML=data.links.map(l=>`<a class="link" href="${esc(l.url)}" target="_blank" rel="noreferrer">${esc(l.title)}</a>`).join("");}
+function filteredTopics(){const query=state.query.trim().toLowerCase();return data.topics.filter(t=>{const passFilter=state.filter==='all'||(state.filter==='draft-rewrite'&&(t.status==='草稿'||t.status==='已重写'))||(state.filter==='pending'&&t.status==='待写')||(state.filter==='validated'&&t.status==='已验证')||(state.filter==='high'&&t.priority==='高');if(!passFilter)return false;if(!query)return true;const haystack=[t.title,t.pillar,t.role,t.status,t.priority,t.line,t.notes,t.latest].filter(Boolean).join(' ').toLowerCase();return haystack.includes(query);});}
+function renderFilters(){filters.innerHTML=FILTERS.map(([k,l])=>`<button class="chip ${k===state.filter?'active':''}" data-filter="${k}">${l}</button>`).join('');filters.querySelectorAll('button').forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;renderFilters();renderTopics();});}
+function renderTopics(){const topics=filteredTopics();if(!topics.length){topicList.innerHTML='<div class="empty">当前筛选条件下没有题。</div>';return;}if(!topics.find(t=>t.title===state.topic?.title)) state.topic=topics[0];topicList.innerHTML=topics.map(t=>`<article class="topic ${state.topic?.title===t.title?'active':''}" data-topic="${esc(t.title)}"><div><div class="meta"><span class="badge ${statusClass(t.status)}">${esc(t.status)}</span><span class="badge pillar">${esc(t.pillar)}</span><span class="badge role">${esc(t.role)}</span></div><h3>${esc(t.title)}</h3><p>${esc(t.notes)}</p></div><div><div>${esc(t.line)}</div><div style="margin-top:6px">${esc(t.priority)}</div></div></article>`).join('');topicList.querySelectorAll('.topic').forEach(el=>el.onclick=()=>{state.topic=data.topics.find(t=>t.title===el.dataset.topic);renderTopics();renderDetail();});renderDetail();}
+function renderTabs(){tabs.innerHTML=TABS.map(([k,l])=>`<button class="tab ${k===state.tab?'active':''}" data-tab="${k}">${l}</button>`).join('');tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;renderTabs();renderPanels();});}
+function block(title,body){return `<div class="block"><h3>${esc(title)}</h3><p>${esc(body)}</p></div>`;}function listBlock(title,items){return items?.length?`<div class="block"><h3>${esc(title)}</h3><ul>${items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>`:'';}
+function historyPanel(item){if(!item.history?.length)return `<div class="tab-panel ${state.tab==='history'?'active':''}"><div class="empty">当前还没有挂接历史样本。</div></div>`;return `<div class="tab-panel ${state.tab==='history'?'active':''}">${item.history.map(h=>`<article class="block"><div class="detail-meta">${(h.metrics||[]).map(m=>`<span class="badge status-pending">${esc(m)}</span>`).join('')}</div><h3>${esc(h.title)}</h3><p>${esc(h.summary)}</p>${h.learnings?.length?`<ul>${h.learnings.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}<p><strong>这次怎么用：</strong>${esc(h.takeaway||'')}</p></article>`).join('')}</div>`;}
+function scorePanel(item){if(!item.score)return `<div class="tab-panel ${state.tab==='score'?'active':''}"><div class="empty">当前还没有挂接评分。</div></div>`;const s=item.score;return `<div class="tab-panel ${state.tab==='score'?'active':''}"><div class="scoreGrid"><article class="score block"><h3>总分</h3><strong>${esc(s.total)} / ${esc(s.max)}</strong><p>${esc(s.verdict)}</p><p>${esc(s.summary)}</p></article><article class="score block"><h3>亮点</h3><p>${(s.highlights||[]).map(x=>`• ${x}`).join('<br>')}</p></article>${(s.breakdown||[]).map(b=>`<article class="score block"><h3>${esc(b.label)}</h3><strong>${esc(b.score)}</strong></article>`).join('')}</div></div>`;}
+function feedbackPanel(item){if(!item.feedback?.length)return `<div class="tab-panel ${state.tab==='feedback'?'active':''}"><div class="empty">当前还没有挂接发布反馈。</div></div>`;return `<div class="tab-panel ${state.tab==='feedback'?'active':''}">${item.feedback.map(f=>`<article class="block"><div class="detail-meta">${(f.metrics||[]).map(m=>`<span class="badge status-pending">${esc(m)}</span>`).join('')}</div><h3>${esc(f.title)}</h3><p>${esc(f.summary)}</p>${f.quotes?.length?`<ul>${f.quotes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}<p><strong>传播触发点：</strong>${esc(f.trigger||'')}</p><p><strong>下次保留：</strong>${esc(f.keep||'')}</p></article>`).join('')}</div>`;}
+function buildPrompt(mode,item){
+  if(!item) return "";
+  if(mode==="research") return `Use wechat-growth-workflow.\n\nTopic: ${item.latest || item.title}\nAudience: 35岁左右、长期停留在执行层的技术人\nGoal: 涨粉并建立定位\nTone: 按我喜欢的风格写\n\nRun only:\n1. market research\n2. deep research\n3. content system design\n\nThen stop and notify me.`;
+  if(mode==="draft") return `Use wechat-growth-workflow.\n\nTopic: ${item.latest || item.title}\nAudience: 35岁左右、长期停留在执行层的技术人\nGoal: 涨粉并建立定位\nTone: 按我喜欢的风格写\n\nContinue from the approved research and write the article draft.\nInclude the Writing Decision Sheet first, then the article, then the scorecard.`;
+  if(mode==="expand") return `Use wechat-growth-workflow.\n\nSource topic: ${item.latest || item.title}\nGoal: 做爆款选题裂变\n\nGenerate:\n1. 同痛点更锋利的版本\n2. 同机制不同技术场景的版本\n3. 更适合引流的版本\n4. 更适合作为主文的版本\n5. 更适合作为承接和短内容的版本\n\nMark what is new in each derivative and avoid repeating the original framing.`;
+  return "";
+}
+function showToast(text){
+  let toast=document.querySelector(".toast");
+  if(!toast){
+    toast=document.createElement("div");
+    toast.className="toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent=text;
+  toast.classList.add("show");
+  window.clearTimeout(showToast.timer);
+  showToast.timer=window.setTimeout(()=>toast.classList.remove("show"),1800);
+}
+async function copyPrompt(mode){
+  const prompt=buildPrompt(mode,state.topic);
+  if(!prompt){
+    showToast("请先选择一个选题");
+    return;
+  }
+  try{
+    await navigator.clipboard.writeText(prompt);
+    showToast("工作流提示词已复制");
+  }catch(_error){
+    showToast("复制失败，请检查浏览器权限");
+  }
+}
+function renderWorkflowActions(){
+  if(!workflowActions) return;
+  if(!state.topic){
+    workflowActions.innerHTML="<div class=\"empty\">先在左侧选一个题，这里就会出现可直接使用的工作流入口。</div>";
+    return;
+  }
+  workflowActions.innerHTML=[
+    "<button class=\"action-btn\" data-workflow=\"research\">跑前3步 research</button>",
+    "<button class=\"action-btn secondary\" data-workflow=\"draft\">继续写正文</button>",
+    "<button class=\"action-btn ghost\" data-workflow=\"expand\">做爆款裂变</button>"
+  ].join("");
+  workflowActions.querySelectorAll("[data-workflow]").forEach(btn=>{
+    btn.onclick=()=>copyPrompt(btn.dataset.workflow);
+  });
+}
+function renderPanels(){const t=state.topic;if(!t)return;panels.innerHTML=[`<div class="tab-panel ${state.tab==='topic'?'active':''}">${block('当前判断',t.notes)}${block('为什么现在写',t.whyNow)}${block('建议动作',t.action)}${block('当前工作标题',t.latest)}${listBlock('建议切口',t.angles)}</div>`,historyPanel(t),scorePanel(t),feedbackPanel(t),`<div class="tab-panel ${state.tab==='cluster'?'active':''}">${listBlock('可裂变方向',t.derivatives)}</div>`].join('');}
+function renderDetail(){if(!state.topic){renderWorkflowActions();return;}detailTitle.textContent=state.topic.title;detailDesc.textContent=state.topic.notes||"这个题当前还没有补充说明。";renderWorkflowActions();renderTabs();renderPanels();}
+renderHero();renderFilters();if(searchInput){searchInput.addEventListener('input',e=>{state.query=e.target.value||'';renderTopics();});}renderTopics();
+</script>
+</body>
+</html>
+
+
+
