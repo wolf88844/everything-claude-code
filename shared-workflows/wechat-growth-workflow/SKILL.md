@@ -11,7 +11,9 @@ This workflow combines these skills in order:
 - `market-research`
 - `deep-research`
 - `content-engine`
+- `wechat-content-principles`
 - `article-writing`
+- `wechat-draft-comparison`
 - `crosspost`
 
 It also absorbs four borrowed capability modules into the main flow:
@@ -30,6 +32,8 @@ Use this skill when the user wants:
 - a repeatable weekly publishing system
 - future drafts to follow the user's preferred公众号文章风格
 - article-level and body-level feedback loops based on real publishing history
+- reusable writing principles extracted from strong drafts, strong articles, and strong comparisons
+- multiple candidate drafts or topic versions compared, with winning traits folded back into future writing
 
 ## Reference Files
 
@@ -47,6 +51,8 @@ Read these references selectively based on the task:
 - [references/wechat-visual-packaging-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-visual-packaging-card.md)
 - [references/wechat-success-engineering-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-success-engineering-card.md)
 - for Xiaohongshu adaptation after the article is stable -> use the dedicated skill `xiaohongshu-content`
+- for distilling what makes a strong公众号 article work and turning it into future writing rules -> use the dedicated skill `wechat-content-principles`
+- for comparing 2 or more公众号 draft versions and distilling their winning traits -> use the dedicated skill `wechat-draft-comparison`
 
 Use them like this:
 - topic choice or topic ranking -> read `topic-selection-criteria.md`
@@ -61,6 +67,7 @@ Use them like this:
 - reviewing historical full articles with URLs or pasted text -> read `wechat-body-feedback-system.md`
 - designing cover images, inline visuals, and pacing breaks -> read `wechat-visual-packaging-card.md`
 - defining what each article is supposed to win and how to review it -> read `wechat-success-engineering-card.md`
+- turning strong writing behavior into reusable rules -> use `wechat-content-principles`
 
 ## Output Standard
 
@@ -199,6 +206,14 @@ This is mandatory.
 4. `Material Compilation`
 5. `Success Spec Reference`
 
+Before drafting the article body, run `wechat-content-principles` against the chosen topic and planned structure.
+Use it to state:
+1. the first-screen discomfort to lead with
+2. the deeper mechanism the article must name
+3. the one reusable distinction that should carry the article
+4. the carry-line shapes the draft should produce
+5. the ending pressure the article should build toward
+
 The Writing Decision Sheet must include:
 1. core reader pain point to hit first
 2. stale angle or common framing to avoid
@@ -253,6 +268,9 @@ Do not write the draft as if research never happened.
 For broad career, growth, or anxiety topics written for公众号, read `wechat-writing-decision-card.md` first.
 Use `wechat-platform-reference-card.md` and `wechat-atmosphere-reference-card.md` as deeper references when needed.
 If comparing multiple drafts of the same idea, prefer the version that is more platform-fit for公众号, not just the version with the cleanest concept.
+When the user provides multiple full drafts or multiple near-final versions of the same idea, use `wechat-draft-comparison` before finalizing the chosen version.
+Treat the comparison output as reusable workflow learning, not as one-off taste.
+Whether there is one draft or multiple drafts, use `wechat-content-principles` to extract what the final article should keep repeating in future work.
 
 Before drafting:
 - read `personal-style-card.md` if the user wants the familiar voice
@@ -301,6 +319,32 @@ Default deliverables:
 - pacing map
 - polished final version if requested
 
+### Step 4.1: Writing Principle Lock
+
+Before drafting the full article body, lock the article's writing principles with `wechat-content-principles`.
+
+This step exists to prevent the draft from becoming:
+- conceptually correct but weak on first-screen pull
+- emotionally recognizable but structurally loose
+- readable but not memorable
+- sharp in places but not reusable as account-level writing behavior
+
+Use `wechat-content-principles` to lock these five decisions before full drafting:
+1. `first-screen discomfort` -> what exact unease should the opening lead with
+2. `deeper mechanism` -> what hidden mechanism the article must name
+3. `core distinction` -> what contrast should carry the full article
+4. `carry-line shape` -> what kinds of quotable lines the article should produce
+5. `ending pressure` -> what harder implication the ending should force the reader to face
+
+Default output for this step:
+1. first-screen discomfort
+2. deeper mechanism
+3. core distinction
+4. 3 carry-line shapes to aim for
+5. ending pressure note
+
+Do not skip this step for promising topics, publish-ready drafts, or strong rewritten topics.
+
 ### Step 4.2: Editorial Pass
 
 Before visual packaging, run one editing pass focused on publishability rather than idea-generation.
@@ -321,6 +365,25 @@ If a draft is already strong, the editorial pass should still produce:
 
 Editorial Pass is not complete if it only returns suggestions.
 It must output a directly usable revised version of the article body after the edit pass.
+
+### Step 4.25: Writing Principle Capture
+
+After the editorial pass and before visual packaging, run `wechat-content-principles` again.
+
+This second pass is not for planning.
+It is for extraction.
+
+Capture:
+1. the best opening move that worked in the finished draft
+2. the strongest distinction pattern that carried the article
+3. the strongest carry line or carry-line pattern
+4. the section progression pattern worth reusing
+5. the ending move worth bringing into future drafts
+
+If the article is weak, capture why the principles did not land clearly.
+If the article is strong, capture the exact moves worth repeating.
+
+Treat this output as reusable writing memory for future公众号 drafts.
 
 ### Step 4.3: Content Asset Capture
 
@@ -521,6 +584,54 @@ Use my topic, title, opening, and公众号平台 references when relevant.
 Separate facts, inferences, and recommendations clearly.
 ```
 
+Use this structure when the user wants the full writing loop with writing-principle locking:
+
+```text
+Use wechat-growth-workflow.
+
+Topic: <topic>
+Audience: <audience>
+Goal: <growth / recognition / authority / bridge / conversion>
+Tone: <tone>
+
+Run in this order:
+1. market research
+2. deep research
+3. content system design
+
+If the topic is worth writing, continue with:
+4. Writing Principle Lock using `wechat-content-principles`
+5. draft the article
+6. editorial pass
+7. Writing Principle Capture using `wechat-content-principles`
+8. score the draft
+9. if multiple viable versions exist, run `wechat-draft-comparison`
+10. finalize the publish-ready version
+
+For Writing Principle Lock, output:
+- first-screen discomfort
+- deeper mechanism
+- core distinction
+- 3 carry-line shapes
+- ending pressure note
+
+For Writing Principle Capture, output:
+- best opening move
+- strongest distinction pattern
+- strongest carry-line pattern
+- section progression pattern
+- ending move worth reusing
+
+Requirements:
+- separate facts, inferences, and recommendations clearly
+- start from a recognizable discomfort or scene
+- move from surface reaction to deeper mechanism
+- build one core distinction that carries the article
+- produce quotable lines worth saving or sharing
+- end harder than it starts
+- treat reusable writing rules as part of the output
+```
+
 ## Post-Draft Evaluation
 
 After any draft is produced, read `references/wechat-article-scorecard.md` and score the article before presenting the final verdict.
@@ -534,6 +645,20 @@ Always include:
 
 Do not treat "the draft exists" as success.
 The draft must pass the scorecard or clearly fail it.
+
+If there are 2 or more viable drafts, or if the user asks which version is stronger, run `wechat-draft-comparison` after scoring.
+Output:
+- the winning version
+- why it wins for this audience
+- the strongest transferable advantages from the losing versions
+- 3 to 7 reusable rules to fold back into future drafts
+
+After scoring any strong or publishable article, run `wechat-content-principles` and capture:
+- the best opening move
+- the core distinction
+- the strongest carry-line pattern
+- the section progression pattern
+- the ending move worth reusing
 
 ## Active Feedback Mechanism
 
