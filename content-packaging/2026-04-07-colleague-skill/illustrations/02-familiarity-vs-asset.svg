@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f8fbff"/>
+  <text x="700" y="90" text-anchor="middle" fill="#1f2d3d" font-size="42" font-family="Microsoft YaHei, sans-serif">&#x719F;&#x7EC3;&#x4E0D;&#x7B49;&#x4E8E;&#x8D44;&#x4EA7;</text>
+  <rect x="170" y="170" width="280" height="130" rx="20" fill="#dfeeff" stroke="#8bb7e8" stroke-width="4"/>
+  <rect x="170" y="350" width="280" height="130" rx="20" fill="#dfeeff" stroke="#8bb7e8" stroke-width="4"/>
+  <rect x="170" y="530" width="280" height="130" rx="20" fill="#dfeeff" stroke="#8bb7e8" stroke-width="4"/>
+  <rect x="950" y="260" width="280" height="130" rx="20" fill="#e8f6ea" stroke="#8dc49a" stroke-width="4"/>
+  <rect x="950" y="440" width="280" height="130" rx="20" fill="#e8f6ea" stroke="#8dc49a" stroke-width="4"/>
+  <text x="310" y="240" text-anchor="middle" fill="#1f2d3d" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x4F1A;&#x505A;</text>
+  <text x="310" y="420" text-anchor="middle" fill="#1f2d3d" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x80FD;&#x5904;&#x7406;</text>
+  <text x="310" y="600" text-anchor="middle" fill="#1f2d3d" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x6709;&#x624B;&#x611F;</text>
+  <text x="1090" y="330" text-anchor="middle" fill="#215732" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x80FD;&#x8BB2;&#x6E05;</text>
+  <text x="1090" y="510" text-anchor="middle" fill="#215732" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x80FD;&#x8FC1;&#x79FB;</text>
+  <path d="M500 420 C640 420, 760 420, 900 420" fill="none" stroke="#5d6d7e" stroke-width="8"/>
+  <path d="M870 400 L910 420 L870 440" fill="none" stroke="#5d6d7e" stroke-width="8"/>
+  <text x="700" y="380" text-anchor="middle" fill="#4b5d67" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x63D0;&#x70BC;</text>
+  <text x="700" y="430" text-anchor="middle" fill="#4b5d67" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x8868;&#x8FBE;</text>
+  <text x="700" y="480" text-anchor="middle" fill="#4b5d67" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x7ED3;&#x6784;&#x5316;</text>
+  <text x="700" y="760" text-anchor="middle" fill="#1f2d3d" font-size="28" font-family="Microsoft YaHei, sans-serif">&#x719F;&#x7EC3;&#xFF1A;&#x4F60;&#x5728;&#x90A3;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0A;&#x80FD;&#x505A;</text>
+  <text x="700" y="805" text-anchor="middle" fill="#1f2d3d" font-size="28" font-family="Microsoft YaHei, sans-serif">&#x8D44;&#x4EA7;&#xFF1A;&#x4F60;&#x79BB;&#x5F00;&#x90A3;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5B83;&#x8FD8;&#x6210;&#x7ACB;</text>
+</svg>

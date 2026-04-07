@@ -24,11 +24,13 @@ Read these selectively based on the task:
 - [references/article-strength-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\article-strength-card.md)
 - [references/opening-patterns.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\opening-patterns.md)
 - [references/zh-writing-checklist.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\zh-writing-checklist.md)
+- [references/audience-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\audience-card.md)
 
 Use them like this:
 - after a strong article or strong comparison -> read `article-strength-card.md`
 - when the opening is still weak or too explanatory -> read `opening-patterns.md`
 - when writing in your Chinese公众号 voice or checking whether a draft really hits the intended reader -> read `zh-writing-checklist.md`
+- when the draft risks drifting away from the core reader -> read `audience-card.md`
 
 ## Core Principle
 
@@ -36,8 +38,9 @@ A strong WeChat article usually wins because it does five things well:
 1. it stops the right reader on the first screen
 2. it names a hidden discomfort more precisely than the reader can
 3. it keeps deepening instead of repeating the same point
-4. it produces lines worth saving or sharing
-5. it makes the account sound like it understands a larger survival problem
+4. it controls paragraph rhythm instead of chopping every thought into isolated one-line fragments
+5. it produces lines worth saving or sharing
+6. it makes the account sound like it understands a larger survival problem
 
 ## Default Reader
 
@@ -133,6 +136,7 @@ When shaping an article, prefer these moves:
 - move from the obvious reading to the deeper reading
 - create one sharp distinction early and keep returning to it
 - turn lived scenes into mechanisms, not just observations
+- keep mobile readability without sacrificing paragraph continuity and article-level flow
 - explain without humiliating the reader
 - close on a harder implication, not a softer summary
 
@@ -143,6 +147,7 @@ The article is weakening if it does too much of this:
 - summarizes the event before naming why it matters
 - uses many concepts but no strong distinction
 - repeats the same diagnosis across sections
+- breaks too many paragraphs into one-line fragments and loses article-level flow
 - stays at self-understanding without pushing to structural cost
 - ends with encouragement instead of consequence
 - has no lines worth screenshotting

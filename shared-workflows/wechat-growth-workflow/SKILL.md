@@ -15,6 +15,10 @@ This workflow combines these skills in order:
 - `article-writing`
 - `wechat-draft-comparison`
 - `crosspost`
+- `baoyu-markdown-to-html`
+- `baoyu-cover-image`
+- `baoyu-article-illustrator`
+- `baoyu-xhs-images`
 
 It also absorbs four borrowed capability modules into the main flow:
 - `brand voice and creator identity stabilization`
@@ -34,6 +38,9 @@ Use this skill when the user wants:
 - article-level and body-level feedback loops based on real publishing history
 - reusable writing principles extracted from strong drafts, strong articles, and strong comparisons
 - multiple candidate drafts or topic versions compared, with winning traits folded back into future writing
+- publication-ready formatting without direct posting
+- stronger cover and inline visual packaging for long-form公众号 articles
+- Xiaohongshu image conversion after text adaptation is finished
 
 ## Reference Files
 
@@ -46,10 +53,15 @@ Read these references selectively based on the task:
 - [references/title-preference-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\title-preference-card.md)
 - [references/opening-template-library.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\opening-template-library.md)
 - [references/topic-seed-library.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\topic-seed-library.md)
+- [references/topic-library-spec.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\topic-library-spec.md)
 - [references/wechat-feedback-loop.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-feedback-loop.md)
 - [references/wechat-body-feedback-system.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-body-feedback-system.md)
 - [references/wechat-visual-packaging-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-visual-packaging-card.md)
-- [references/wechat-success-engineering-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-success-engineering-card.md)
+- [references/wechat-visual-presets.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\wechat-visual-presets.md)
+- [references/title-patterns.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\title-patterns.md)
+- [references/wechat-quality-gate.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\wechat-quality-gate.md)
+- [references/performance-review-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\performance-review-card.md)
+- [references/benchmark-reading-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\benchmark-reading-card.md)
 - for Xiaohongshu adaptation after the article is stable -> use the dedicated skill `xiaohongshu-content`
 - for distilling what makes a strong公众号 article work and turning it into future writing rules -> use the dedicated skill `wechat-content-principles`
 - for comparing 2 or more公众号 draft versions and distilling their winning traits -> use the dedicated skill `wechat-draft-comparison`
@@ -61,13 +73,23 @@ Use them like this:
 - optimizing for公众号 platform fit -> read `wechat-platform-reference-card.md`
 - understanding公众号 ecosystem and reading atmosphere -> read `wechat-atmosphere-reference-card.md`
 - generating title options -> read `title-preference-card.md`
+- when titles need stronger mechanism-fit or reader-fit -> read `title-patterns.md`
 - building the opening -> read `opening-template-library.md`
 - extending approved topic directions -> read `topic-seed-library.md`
+- keeping topic fields, roles, and statuses consistent across Notion and local libraries -> read `topic-library-spec.md`
 - setting up active pre/post publish learning -> read `wechat-feedback-loop.md`
 - reviewing historical full articles with URLs or pasted text -> read `wechat-body-feedback-system.md`
 - designing cover images, inline visuals, and pacing breaks -> read `wechat-visual-packaging-card.md`
+- choosing a repeatable cover or illustration style based on the article's job -> read `wechat-visual-presets.md`
 - defining what each article is supposed to win and how to review it -> read `wechat-success-engineering-card.md`
+- checking publish-readiness for reader-fit, mechanism depth, and propagation value -> read `wechat-quality-gate.md`
+- reviewing strong and weak post-publish signals after a meaningful scoring or publishing pass -> read `performance-review-card.md`
+- studying why benchmark articles work before borrowing patterns -> read `benchmark-reading-card.md`
 - turning strong writing behavior into reusable rules -> use `wechat-content-principles`
+- converting a final markdown article into publishable HTML -> use `baoyu-markdown-to-html`
+- generating the公众号 cover after the article is locked -> use `baoyu-cover-image`
+- adding inline illustrations only when they improve understanding or pacing -> use `baoyu-article-illustrator`
+- converting a finished小红书 adaptation into image pages -> use `baoyu-xhs-images`
 
 ## Output Standard
 
@@ -109,6 +131,19 @@ Do not start Step 4 or Step 5 unless one of these is true:
 
 After Step 3, the response should make it easy for the user to judge whether the topic is worth writing.
 
+At any required pause point, do not stop with only a summary.
+You must also state clearly:
+- which step the workflow is currently paused at
+- which step will run next if the user says `继续`
+- which downstream steps will follow automatically after that
+
+- in Chinese, what each next step will actually do, why it matters, and what concrete output it will produce
+
+Do not list only step names.
+At a checkpoint, the user should be able to understand the downstream workflow without having to open the skill file or ask follow-up questions.
+
+The user should never need to guess what "continue" means.
+
 ## Default Workflow
 
 ### Step 1: Market Research
@@ -120,6 +155,11 @@ Use `market-research` to identify:
 - strong title patterns
 - differentiated topic opportunities
 
+If strong benchmark articles already exist in the topic family, read `benchmark-reading-card.md` and extract:
+- the opening move that creates instant recognition
+- the mechanism they name better than average articles
+- the one or two lines most worth learning from without copying
+
 Before locking a topic, read `topic-selection-criteria.md` and pressure-test whether the idea has:
 - immediate recognition
 - a strong reframe
@@ -127,6 +167,8 @@ Before locking a topic, read `topic-selection-criteria.md` and pressure-test whe
 - series potential
 
 If the user already has approved topics, read `topic-seed-library.md` and treat them as preferred starting points.
+
+If topics are being moved between Notion, local references, or workflow outputs, read `topic-library-spec.md` and keep pillar, role, publishing line, and status labels consistent.
 
 Deliver:
 - 5 reader pain points
@@ -280,6 +322,7 @@ Before drafting:
 Default article requirements:
 - strong first three paragraphs
 - short mobile-friendly paragraphs
+- do not over-fragment the article into excessive one-line paragraphs unless a line truly needs emphasis
 - one core argument
 - one practical framework or takeaway
 - one interaction question near the end
@@ -385,7 +428,66 @@ If the article is strong, capture the exact moves worth repeating.
 
 Treat this output as reusable writing memory for future公众号 drafts.
 
-### Step 4.3: Content Asset Capture
+### Step 4.3: Publication Formatting
+
+After the draft passes the editorial pass, quality gate, and score threshold, convert the final markdown article into a publishable format.
+
+Use `baoyu-markdown-to-html` here when:
+- the article is considered publish-ready
+- the user wants a公众号-compatible HTML version
+- the article should move from strong draft into delivery-ready asset form
+
+Output:
+1. final markdown version
+2. publishable HTML version
+3. any formatting issues that need manual review
+
+Do not run this step on unstable drafts.
+Only run it after the article is already worth publishing.
+
+### Step 4.4: Cover Packaging
+
+After publication formatting, package the article with a proper cover.
+
+Use `baoyu-cover-image` when:
+- the article is a `主文题` or `引流题`
+- the article is likely to be used as a正式公众号 piece
+- the article needs a stronger first-impression asset
+
+Before choosing the final cover direction, read `wechat-visual-presets.md` and pick the preset that matches the article's role.
+
+Provide:
+- title
+- optional subtitle or core distinction
+- tone keywords
+- target reader
+
+Output:
+1. cover concept
+2. generated cover direction or asset
+3. short note on why this cover fits the article
+
+### Step 4.5: Inline Visual Packaging
+
+After the cover is handled, decide whether the article needs inline visuals.
+
+Use `baoyu-article-illustrator` only when:
+- the article contains an abstract distinction that would benefit from being seen
+- the article has a process, mechanism, or layered structure that can be clarified visually
+- the article is long enough that visual pacing would improve reading flow
+
+When inline visuals are needed, use `wechat-visual-presets.md` to keep the illustration style consistent with the cover and the article's content role.
+
+Do not add visuals just to decorate the article.
+Add them only when they improve comprehension, rhythm, or memory.
+
+Output:
+1. whether inline visuals are needed
+2. where they should appear
+3. what job each visual is doing
+4. a direct insertion note that can be placed into the markdown or article body so nobody has to guess where the image goes
+
+### Step 4.6: Content Asset Capture
 
 After the editorial pass, capture what this article adds to the long-term content asset system.
 This is mandatory for strong or publish-ready drafts.
@@ -399,7 +501,7 @@ Capture at least:
 
 Use this to build a reusable article library, not just one-off posts.
 
-### Step 4.5: Visual Packaging
+### Step 4.7: Visual Packaging
 
 This is not an optional decoration step.
 After the article draft is stable enough to publish, move immediately into the visual production layer before cross-platform repurposing.
@@ -416,6 +518,7 @@ Read `references/wechat-visual-packaging-card.md` and produce in this exact orde
 8. 2 to 4 inline visual ideas
 9. prompts for the inline visuals when useful
 10. pacing map showing where visuals or breaks should appear inside the article
+11. explicit image placement notes to insert next to each visual in the final article or markdown
 
 The visual layer should improve:
 - first-screen stop rate
@@ -636,12 +739,20 @@ Requirements:
 
 After any draft is produced, read `references/wechat-article-scorecard.md` and score the article before presenting the final verdict.
 
-Always include:
-- total score
-- score by dimension
-- strongest parts
-- weakest parts
-- publish recommendation
+
+
+Also read `wechat-quality-gate.md` before final verdict for reader-fit, mechanism depth, propagation value, and ending pressure.
+
+After any meaningful scoring pass or real publishing result, read `performance-review-card.md` and capture:
+- what worked and why
+- what should be reused
+- what failed and should be cut or repaired
+- whether the article deserves a sequel, rewrite, or topic cluster
+
+If the article is publish-ready after evaluation, continue into:
+1. `Step 4.3: Publication Formatting`
+2. `Step 4.4: Cover Packaging`
+3. `Step 4.5: Inline Visual Packaging` if needed
 
 Do not treat "the draft exists" as success.
 The draft must pass the scorecard or clearly fail it.
@@ -668,6 +779,8 @@ For each article, add two lightweight layers:
 1. `Pre-Publish Propagation Hypothesis`
 2. `Post-Publish Active Feedback Capture`
 
+Use `performance-review-card.md` to keep post-publish learning concrete instead of vague. Capture strong openings, strong mechanism naming, shareable lines, and any weak spots that should feed the next draft.
+
 The workflow should not rely only on after-the-fact intuition.
 It should form a hypothesis before publishing and a reusable learning after publishing.
 
@@ -683,6 +796,21 @@ Read `references/wechat-body-feedback-system.md` and use it to:
 
 Do not promote one article into a universal rule too quickly.
 Look for repeated structural signals across multiple samples.
+
+## Cross-Platform Visual Extension
+
+When the article has already been adapted for Xiaohongshu text, convert it into image pages only after the text version is stable.
+
+Use `baoyu-xhs-images` for this step.
+
+Default sequence:
+1. complete the公众号 article
+2. adapt it with `xiaohongshu-content`
+3. lock the小红书 text structure
+4. convert it into image pages with `baoyu-xhs-images`
+
+Do not generate Xiaohongshu images directly from the long公众号 draft.
+Always adapt the text first so the image series fits platform reading habits.
 
 ## Weak-Sample Rewrite Path
 
@@ -732,6 +860,8 @@ If the user asks, or if the score is below 32, offer a targeted repair pass focu
 ## Topic Library Mapping And Title Testing
 
 After a topic is drafted or rewritten, map it back to `topic-seed-library.md`.
+
+Use `topic-library-spec.md` as the schema reference whenever the workflow updates a topic library, a Notion database, or a local seed file.
 
 Use these status labels in the topic library:
 - `待写` -> approved seed, not drafted yet
@@ -821,6 +951,7 @@ Keep a short note showing:
 - source topic
 - intended publishing role
 - whether the derivative is for引流, authority, conversion, or repurposing
+
 
 
 

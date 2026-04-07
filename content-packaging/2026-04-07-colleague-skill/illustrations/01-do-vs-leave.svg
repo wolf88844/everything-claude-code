@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <rect width="1400" height="820" fill="#fcfaf4"/>
+  <text x="700" y="90" text-anchor="middle" fill="#222" font-size="42" font-family="Microsoft YaHei, sans-serif">&#x505A;&#x8FC7; vs &#x7559;&#x4E0B;</text>
+  <rect x="110" y="160" width="500" height="520" rx="24" fill="#fff3ec" stroke="#e7b49b" stroke-width="4"/>
+  <rect x="790" y="160" width="500" height="520" rx="24" fill="#eef8f0" stroke="#9fc4a3" stroke-width="4"/>
+  <text x="360" y="235" text-anchor="middle" fill="#9b4d2c" font-size="40" font-family="Microsoft YaHei, sans-serif">&#x505A;&#x8FC7;</text>
+  <text x="1040" y="235" text-anchor="middle" fill="#376a3d" font-size="40" font-family="Microsoft YaHei, sans-serif">&#x7559;&#x4E0B;</text>
+  <text x="360" y="315" text-anchor="middle" fill="#444" font-size="28" font-family="Microsoft YaHei, sans-serif">&#x9879;&#x76EE;&#x3001;&#x6545;&#x969C;&#x3001;&#x534F;&#x8C03;&#x3001;&#x8FD4;&#x5DE5;</text>
+  <text x="1040" y="315" text-anchor="middle" fill="#444" font-size="28" font-family="Microsoft YaHei, sans-serif">&#x5224;&#x65AD;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x8868;&#x8FBE;&#x3001;&#x6846;&#x67B6;</text>
+  <text x="360" y="420" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x4F9D;&#x9644;&#x5C97;&#x4F4D;&#x548C;&#x4E0A;&#x4E0B;&#x6587;</text>
+  <text x="360" y="470" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x79BB;&#x5F00;&#x573A;&#x666F;&#x5C31;&#x96BE;&#x590D;&#x7528;</text>
+  <text x="360" y="520" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x66F4;&#x50CF;&#x5DE5;&#x4F5C;&#x75D5;&#x8FF9;</text>
+  <text x="1040" y="420" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x80FD;&#x88AB;&#x8BB2;&#x6E05;&#x3001;&#x5199;&#x51FA;&#x6765;&#x3001;&#x8FC1;&#x79FB;</text>
+  <text x="1040" y="470" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x79BB;&#x5F00;&#x5C97;&#x4F4D;&#x4ECD;&#x7136;&#x6210;&#x7ACB;</text>
+  <text x="1040" y="520" text-anchor="middle" fill="#555" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x66F4;&#x50CF;&#x53EF;&#x5E26;&#x8D70;&#x8D44;&#x4EA7;</text>
+  <path d="M620 610 L780 610" stroke="#7f8c8d" stroke-width="6"/>
+  <path d="M760 590 L790 610 L760 630" fill="none" stroke="#7f8c8d" stroke-width="6"/>
+  <text x="700" y="735" text-anchor="middle" fill="#222" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x6587;&#x7AE0;&#x6838;&#x5FC3;&#x533A;&#x5206;&#xFF1A;&#x505A;&#x8FC7;&#x5F88;&#x591A;&#xFF0C;&#x5E76;&#x4E0D;&#x7B49;&#x4E8E;&#x7559;&#x4E0B;&#x5F88;&#x591A;</text>
+</svg>

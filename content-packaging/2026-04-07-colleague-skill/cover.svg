@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#1e1f1b"/>
+  <rect x="40" y="40" width="1520" height="820" rx="18" fill="none" stroke="#d8d2c4" stroke-width="4" opacity="0.45"/>
+  <text x="800" y="180" text-anchor="middle" fill="#f3eee2" font-size="60" font-family="KaiTi, STKaiti, serif">&#x4E3A;&#x4EC0;&#x4E48;&#x201C;&#x79BB;&#x804C;&#x540C;&#x4E8B;.skill&#x201D;&#x8BA9;&#x4EBA;&#x4E0D;&#x8212;&#x670D;</text>
+  <text x="800" y="255" text-anchor="middle" fill="#f3eee2" font-size="60" font-family="KaiTi, STKaiti, serif">&#x4E0D;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x50CF;&#x4EBA;&#xFF0C;&#x800C;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x592A;&#x50CF;&#x53EF;&#x4EA4;&#x63A5;</text>
+  <line x1="260" y1="470" x2="1340" y2="470" stroke="#cfc8b7" stroke-width="5" stroke-dasharray="14 10" opacity="0.65"/>
+  <rect x="220" y="380" width="360" height="220" rx="18" fill="none" stroke="#f3eee2" stroke-width="5"/>
+  <rect x="1020" y="380" width="360" height="220" rx="18" fill="none" stroke="#b9d8b4" stroke-width="5"/>
+  <text x="400" y="450" text-anchor="middle" fill="#f3eee2" font-size="54" font-family="KaiTi, STKaiti, serif">&#x505A;&#x8FC7;</text>
+  <text x="1200" y="450" text-anchor="middle" fill="#b9d8b4" font-size="54" font-family="KaiTi, STKaiti, serif">&#x7559;&#x4E0B;</text>
+  <text x="400" y="520" text-anchor="middle" fill="#d8d2c4" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x9879;&#x76EE; / &#x6545;&#x969C; / &#x534F;&#x8C03; / &#x6551;&#x706B;</text>
+  <text x="1200" y="520" text-anchor="middle" fill="#d7ecd2" font-size="30" font-family="Microsoft YaHei, sans-serif">&#x5224;&#x65AD; / &#x65B9;&#x6CD5; / &#x8868;&#x8FBE; / &#x7ED3;&#x6784;</text>
+  <path d="M650 490 C760 390, 840 390, 950 490" fill="none" stroke="#f3eee2" stroke-width="6" stroke-linecap="round"/>
+  <path d="M930 470 L965 490 L930 510" fill="none" stroke="#f3eee2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="800" y="720" text-anchor="middle" fill="#d8d2c4" font-size="34" font-family="Microsoft YaHei, sans-serif">&#x505A;&#x8FC7;&#x4E0D;&#x7B49;&#x4E8E;&#x7559;&#x4E0B;</text>
+  <text x="800" y="775" text-anchor="middle" fill="#d8d2c4" font-size="26" font-family="Microsoft YaHei, sans-serif">&#x771F;&#x6B63;&#x503C;&#x94B1;&#x7684;&#xFF0C;&#x662F;&#x79BB;&#x5F00;&#x5C97;&#x4F4D;&#x4E5F;&#x8FD8;&#x80FD;&#x6210;&#x7ACB;&#x7684;&#x4E1C;&#x897F;</text>
+</svg>
