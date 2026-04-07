@@ -8,6 +8,8 @@ const targetRoot = path.join(os.homedir(), ".codex", "skills");
 
 const workflows = [
   "wechat-growth-workflow",
+  "wechat-content-principles",
+  "wechat-draft-comparison",
   "social-inspiration-workflow",
   "xiaohongshu-content",
   "personal-ip-strategy",
