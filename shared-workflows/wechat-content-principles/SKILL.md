@@ -22,11 +22,12 @@ Use this skill when the user wants to:
 
 Read these selectively based on the task:
 - [references/article-strength-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\article-strength-card.md)
+- [references/good-article-judgment-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\good-article-judgment-card.md)
 - [references/opening-patterns.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\opening-patterns.md)
 - [references/zh-writing-checklist.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-content-principles\references\zh-writing-checklist.md)
 
 Use them like this:
-- after a strong article or strong comparison -> read `article-strength-card.md`
+- after a strong article or strong comparison -> read `article-strength-card.md` and `good-article-judgment-card.md`
 - when the opening is still weak or too explanatory -> read `opening-patterns.md`
 - when writing in your Chinese公众号 voice or checking whether a draft really hits the intended reader -> read `zh-writing-checklist.md`
 
@@ -185,3 +186,5 @@ The goal is to make future articles stronger before they are written.
 - Do not confuse length with depth.
 - Do not turn principles into formulaic copy.
 - Do not end at taste; always convert insights into reusable writing rules.
+
+

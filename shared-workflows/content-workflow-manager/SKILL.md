@@ -19,6 +19,15 @@ Use this skill when the user wants to:
 - check whether a piece is ready to move to the next stage
 - avoid skipping required workflow steps
 
+## Reference Files
+
+Read these when managing article readiness or routing writing work:
+- [good-article-judgment-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\good-article-judgment-card.md)
+
+Use it when:
+- deciding whether a draft is only correct or actually strong
+- checking whether a topic is ready to move from selection into writing
+- judging whether the current draft still has scene, naming, mechanism, and self-return pressure
 ## Core Principle
 
 The matrix controls sequence.
@@ -53,10 +62,10 @@ Purpose:
 - clarify the angle before drafting starts
 
 ### Layer 3: WeChat Execution
-- `wechat-growth-workflow`
-- `article-writing`
-- `wechat-content-principles`
-- `wechat-draft-comparison`
+- `wechat-growth-workflow` as the main execution workflow
+- `article-writing` as the Version A drafting engine
+- `wechat-content-principles` as the principle lock and Version B rewrite module
+- `wechat-draft-comparison` as the version selector
 
 Purpose:
 - research
@@ -118,16 +127,18 @@ If the user is publishing daily, use this order by default:
 1. confirm the scheduled candidate topic
 2. confirm the article's `Success Spec`
 3. run `wechat-growth-workflow` Step 1 to Step 3
-4. stop and judge: write / revise angle / drop
-5. if approved, run `wechat-content-principles` for Writing Principle Lock
-6. draft via `article-writing`
-7. run `Editorial Pass`
-8. output the full revised publish-ready article body
-9. if multiple viable versions exist, run `wechat-draft-comparison`
-10. finalize titles
-11. finalize visual packaging
-12. if needed, run `xiaohongshu-content`
-13. capture learnings back into the system
+4. run `wechat-growth-workflow` Step 3.75 Pre-Writing Content Judgment
+5. stop and judge: write / revise angle / drop
+6. if approved, run `wechat-content-principles` for Writing Principle Lock
+7. draft Version A via `article-writing`
+8. run `wechat-content-principles` on Version A and produce Version B
+9. use `wechat-draft-comparison` to choose the stronger version when both are viable
+10. run `Editorial Pass` on the chosen version
+11. output the full revised publish-ready article body
+12. finalize titles
+13. finalize visual packaging
+14. if needed, run `xiaohongshu-content`
+15. capture learnings back into the system
 
 Do not skip from matrix directly to publishing.
 
@@ -236,3 +247,9 @@ When asked "run today's workflow", answer in this order:
 3. today's required workflow step
 4. today's stop point or approval point
 5. today's definition of done
+
+
+
+
+
+

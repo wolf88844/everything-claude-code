@@ -1,12 +1,23 @@
 ﻿---
 name: article-writing
-description: Write articles, guides, blog posts, tutorials, newsletter issues, and other long-form content in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.
+description: Draft long-form articles and serve as the writing engine inside larger publishing workflows, especially WeChat article production, in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.
 origin: ECC
 ---
 
 # Article Writing
 
 Write long-form content that sounds like a real person or brand, not generic AI output.
+
+## Role In The Content Stack
+
+Treat this skill as a drafting engine, not as the full public-account workflow.
+For WeChat article production, this skill should usually be called from inside `wechat-growth-workflow`.
+Its main job is to produce Version A: the first structurally complete long-form draft.
+After Version A exists, the stronger public-account workflow should continue with:
+1. `wechat-content-principles` on the draft itself
+2. a principle-guided Version B rewrite
+3. `wechat-draft-comparison` when multiple viable versions exist
+4. editorial selection of the publish-ready winner
 
 ## When to Activate
 
@@ -22,6 +33,7 @@ Write long-form content that sounds like a real person or brand, not generic AI 
 3. Prefer short, direct sentences over padded ones.
 4. Use specific numbers when available and sourced.
 5. Never invent biographical facts, company metrics, or customer evidence.
+6. Reduce excessive one-line paragraphs; default body paragraphs should usually hold 2 to 4 sentences unless a single line is intentionally used as a hinge, verdict, or ending-pressure beat.
 
 ## Voice Capture Workflow
 
@@ -95,6 +107,7 @@ Before drafting, explicitly lock the article with a short constraint set. At min
 3. what sentence or section is most likely to carry the share or screenshot value
 4. what emotional move the ending should make: relief, pressure, clarity, discomfort, permission, or challenge
 5. what weak version must be avoided, such as "generic motivation post", "empty thought leadership", "research dump", or "too much throat-clearing"
+6. what paragraph rhythm the draft should hold, especially where one-line paragraphs should be limited on purpose
 
 If the article is mechanism-heavy, psychologically subtle, or easy to write shallowly, prefer a stronger pre-draft structure:
 
@@ -176,6 +189,8 @@ This prevents good drafts from disappearing after publication and turns writing 
 
 ## Writing Process
 
+When used inside `wechat-growth-workflow`, this skill should normally output Version A, not assume it already has the final winner.
+
 1. Clarify the audience and purpose.
 2. Define the Success Spec.
 3. Build or reuse the voice operating profile.
@@ -216,4 +231,8 @@ Before delivering:
 - make sure the best lines are doing real work, not just sounding clever
 - ensure every section adds new information
 - check formatting for the intended platform
+
+
+
+
 

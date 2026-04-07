@@ -55,3 +55,17 @@ Recommended habit:
 4. commit the repo version
 
 This prevents the shared repo version and the local runtime version from drifting apart.
+
+## Recommended Structure
+
+Treat these as the main workflows:
+- `content-workflow-manager`
+- `personal-ip-strategy`
+- `social-inspiration-workflow`
+- `wechat-growth-workflow`
+- `xiaohongshu-content`
+
+Treat these as WeChat execution submodules:
+- `article-writing` -> Version A drafting engine
+- `wechat-content-principles` -> principle lock and Version B rewrite module
+- `wechat-draft-comparison` -> version selector when multiple viable drafts exist
