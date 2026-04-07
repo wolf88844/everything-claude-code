@@ -1,10 +1,13 @@
-# Shared Workflows
+﻿# Shared Workflows
 
 This directory is the shared source of truth for your cross-computer Codex content workflows.
 
 It currently mirrors these custom skills:
 
+- `content-workflow-manager`
 - `wechat-growth-workflow`
+- `wechat-content-principles`
+- `wechat-draft-comparison`
 - `social-inspiration-workflow`
 - `xiaohongshu-content`
 - `personal-ip-strategy`
@@ -33,8 +36,8 @@ This avoids having multiple drifting versions across different machines.
 
 ## Notes
 
-- `article-writing` is still project-local in `.agents/skills/article-writing/`
-- If you want that workflow shared globally too, it can be promoted later into `shared-workflows/`
+- `shared-workflows/` is the source of truth for these shared workflows
+- local `~/.codex/skills/` is only the runtime copy
 
 ## Sync-Back Rule
 
