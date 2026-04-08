@@ -24,11 +24,13 @@ Use this skill when the user wants to:
 
 Read these when managing article readiness or routing writing work:
 - [good-article-judgment-card.md](D:\workSpace\everything-claude-code\shared-workflows\wechat-growth-workflow\references\good-article-judgment-card.md)
+- [cross-platform-routing-card.md](D:\workSpace\everything-claude-code\shared-workflows\content-workflow-manager\references\cross-platform-routing-card.md)
 
 Use it when:
 - deciding whether a draft is only correct or actually strong
 - checking whether a topic is ready to move from selection into writing
 - judging whether the current draft still has scene, naming, mechanism, and self-return pressure
+- choosing the right adaptation path once the source article is stable
 
 ## Core Principle
 
@@ -346,3 +348,5 @@ When asked "run today's workflow", answer in this order:
 3. today's required workflow step
 4. today's stop point or approval point
 5. today's definition of done
+
+
