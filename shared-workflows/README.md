@@ -60,7 +60,6 @@ This prevents the shared repo version and the local runtime version from driftin
 ## Recommended Structure
 
 Treat these as the main shared workflows:
-Treat these as the main workflows:
 - `content-workflow-manager`
 - `personal-ip-strategy`
 - `social-inspiration-workflow`
@@ -74,3 +73,4 @@ Treat these as WeChat execution submodules:
 
 Treat this as an optional local orchestration layer:
 - `.claude/skills/content-creation` -> convenience entry point for multi-platform execution, built on top of the shared workflow stack
+

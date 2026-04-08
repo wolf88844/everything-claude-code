@@ -18,6 +18,7 @@ Use this skill when the user wants to:
 - manage handoffs between strategy, topic selection, drafting, comparison, and distribution
 - check whether a piece is ready to move to the next stage
 - avoid skipping required workflow steps
+- use a faster convenience path for multi-platform content without breaking the main gates
 
 ## Reference Files
 
@@ -28,6 +29,7 @@ Use it when:
 - deciding whether a draft is only correct or actually strong
 - checking whether a topic is ready to move from selection into writing
 - judging whether the current draft still has scene, naming, mechanism, and self-return pressure
+
 ## Core Principle
 
 The matrix controls sequence.
@@ -39,6 +41,7 @@ It decides:
 1. which workflow should run now
 2. what must be completed before the next workflow starts
 3. what should be captured back into the system after execution
+4. when a convenience shortcut is allowed and when the full main path is still required
 
 ## Managed Workflow Stack
 
@@ -86,6 +89,18 @@ Purpose:
 - enforce image-text integration
 - enforce short-form constraints
 
+### Optional Local Convenience Layer
+- `.claude/skills/content-creation`
+
+Purpose:
+- provide one multi-platform convenience entry point
+- bundle discovery, strategy, WeChat creation, and adaptation into one quick-start path
+- offer reusable pipeline templates without replacing the shared workflow stack
+
+Rule:
+- treat this as a convenience wrapper, not as the source of truth
+- if it conflicts with shared workflows, shared workflows win
+
 ## Default Routing Rules
 
 ### Route to `personal-ip-strategy` when:
@@ -119,6 +134,16 @@ Purpose:
 - the公众号 version is stable
 - the user wants a native Xiaohongshu rewrite
 - the user wants short text and image-text coordination
+
+### Route to `.claude/skills/content-creation` only when:
+- the user explicitly wants one convenience entry point for a full multi-platform run
+- the user wants a fast `discovery -> WeChat -> Xiaohongshu` pipeline template
+- the task is better served by a packaged orchestration shortcut than by manually routing each atomic workflow
+
+Do not use it to replace:
+- `content-workflow-manager` for sequencing and gate control
+- `wechat-growth-workflow` for WeChat creation depth
+- `xiaohongshu-content` for platform-native adaptation rules
 
 ## Strict Daily Execution Order
 
@@ -223,6 +248,80 @@ Output:
 4. daily execution order
 5. sync / maintenance notes if relevant
 
+### Mode 4: Multi-Platform Convenience Dispatch
+Use when the user says:
+- run a full content pipeline
+- do discovery then WeChat then Xiaohongshu
+- repurpose this across platforms
+- give me the fastest multi-platform route
+
+Output:
+1. recommended pipeline template
+2. which shared workflows will run inside it
+3. where the pause point is
+4. which quality gate must be passed before adaptation
+5. final assets expected from the run
+
+## Convenience Pipeline Templates
+
+Use these only as manager-approved shortcuts. They do not replace the default gate checks.
+
+### Template A: Full Multi-Platform Pipeline
+Use when:
+- the user wants topic discovery, article creation, and adaptation in one run
+
+Run:
+1. `social-inspiration-workflow`
+2. `personal-ip-strategy` when positioning is still unclear
+3. `wechat-growth-workflow`
+4. `xiaohongshu-content`
+
+Pause after:
+- `wechat-growth-workflow` Step 3 by default
+
+### Template B: WeChat-Only Deep Dive
+Use when:
+- the user wants one strong public-account article without cross-platform adaptation yet
+
+Run:
+1. `wechat-growth-workflow` Step 1 to Step 3
+2. pause for approval
+3. continue the full WeChat execution chain if approved
+
+### Template C: Xiaohongshu-First Shortcut
+Use when:
+- the user wants a native Xiaohongshu note first
+
+Run:
+1. `social-inspiration-workflow` for topic validation
+2. `xiaohongshu-content`
+3. optional `wechat-growth-workflow` only if the user later wants to expand it into long-form
+
+### Template D: Cross-Platform Repurpose
+Use when:
+- the user already has a source article and wants derivatives
+
+Run:
+1. validate the source article is stable
+2. `wechat-content-principles` to identify what must survive adaptation
+3. `xiaohongshu-content` for Xiaohongshu
+4. optional `article-writing` for newsletter or blog variants
+
+## Platform Adaptation Defaults
+
+Use these defaults when routing cross-platform work unless the user explicitly overrides them.
+
+| Platform Move | Length | Paragraph Rhythm | Tone | Structural Priority | Visual Priority |
+|---|---|---|---|---|---|
+| WeChat -> Xiaohongshu | 300-500 chars | 1-2 sentences per block | conversational, immediate | hook -> scene -> takeaway | first image is critical |
+| WeChat -> Newsletter | around 70% of source | tighter than WeChat | more personal | keep argument, compress sections | optional |
+| WeChat -> Blog | equal or longer than source | standard web reading rhythm | analytical, explicit | add depth, examples, structure aids | optional |
+
+Routing rule:
+- do not adapt before the WeChat source is stable
+- do not treat Xiaohongshu as a shortened WeChat article
+- do not skip the quality gate just because the user wants speed
+
 ## Practical Rule
 
 Do not let users accidentally bypass the system because a matrix exists.
@@ -247,9 +346,3 @@ When asked "run today's workflow", answer in this order:
 3. today's required workflow step
 4. today's stop point or approval point
 5. today's definition of done
-
-
-
-
-
-
