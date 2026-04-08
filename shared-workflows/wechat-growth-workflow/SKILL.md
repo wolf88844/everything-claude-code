@@ -47,6 +47,7 @@ Use this skill when the user wants:
 Read these references selectively based on the task:
 - [references/personal-style-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\personal-style-card.md)
 - [references/wechat-writing-decision-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-writing-decision-card.md)
+- [references/good-article-judgment-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\good-article-judgment-card.md)
 - [references/wechat-platform-reference-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-platform-reference-card.md)
 - [references/wechat-atmosphere-reference-card.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\wechat-atmosphere-reference-card.md)
 - [references/topic-selection-criteria.md](C:\Users\Administrator\.codex\skills\wechat-growth-workflow\references\topic-selection-criteria.md)
@@ -69,7 +70,7 @@ Read these references selectively based on the task:
 Use them like this:
 - topic choice or topic ranking -> read `topic-selection-criteria.md`
 - writing in the user's preferred voice -> read `personal-style-card.md`
-- making fast公众号 writing decisions -> read `wechat-writing-decision-card.md`
+- making fast公众号 writing decisions -> read `wechat-writing-decision-card.md` and `good-article-judgment-card.md`
 - optimizing for公众号 platform fit -> read `wechat-platform-reference-card.md`
 - understanding公众号 ecosystem and reading atmosphere -> read `wechat-atmosphere-reference-card.md`
 - generating title options -> read `title-preference-card.md`
@@ -225,6 +226,26 @@ Default checkpoint output:
 4. a short judgment: write / revise angle / drop
 5. a clear prompt for the user to decide whether to continue into writing
 
+### Step 3.75: Pre-Writing Content Judgment
+
+After the topic is chosen and before full drafting begins, run one explicit content-judgment check.
+This step exists to stop weak or misaligned topics from sliding into writing just because the topic has already been selected.
+
+This is the mandatory point where the workflow asks:
+- is this topic actually worth writing now
+- what is this piece supposed to win
+- what is the minimum sign that it worked
+- what is the most likely way it will fail
+
+Default output for this step:
+1. `primary goal`
+2. `expected level`
+3. `why this topic is suited to that goal`
+4. `minimum success signal`
+5. `most likely failure mode`
+6. final judgment: `write / revise angle / drop`
+
+Do not begin Step 4 unless Step 3.75 is complete.
 ### Step 4: Draft the Article
 
 In this workflow, drafting is not only about producing a readable article.
@@ -237,7 +258,13 @@ During drafting, actively check:
 - does the article reinforce one of the account's core mother themes
 - does the article produce reusable lines, scenes, or mechanisms that belong in the long-term asset library
 
-Use `article-writing` to produce the article.
+Use `article-writing` to produce Version A: the first structurally complete full draft.
+Do not treat Version A as the automatic winner.
+After Version A exists, the workflow should continue by:
+1. running `wechat-content-principles` on Version A itself
+2. producing a principle-guided Version B rewrite
+3. using `wechat-draft-comparison` when Version A and Version B are both viable
+4. taking the winning version into the final Editorial Pass
 
 Before drafting, create five writing inputs using outputs from Step 1, Step 2, and the Step 3 `Success Spec`.
 This is mandatory.
@@ -302,6 +329,7 @@ Use these inputs to stress-test whether the draft is:
 Treat the Pre-Draft Framework Analysis as the article's structural blueprint, not as optional notes.
 Treat the Voice Breakdown as the tone and rhythm contract.
 Treat the Material Compilation as the source pool that keeps the article concrete.
+Treat Step 3.75 Pre-Writing Content Judgment as the final go/no-go gate before drafting.
 
 The article draft must follow this Writing Decision Sheet, Pre-Draft Framework Analysis, Voice Breakdown, and Material Compilation.
 Do not ignore Step 1 and Step 2 outputs once writing begins.
@@ -327,6 +355,7 @@ Default article requirements:
 - one practical framework or takeaway
 - one interaction question near the end
 - a closing CTA aligned with growth
+- avoid excessive one-line paragraphs; default body paragraphs should usually carry 2 to 4 sentences unless the line is serving as a hinge, verdict, or ending-pressure beat
 
 For WeChat growth articles, prefer this style:
 - start from a repeated reader behavior
@@ -388,7 +417,54 @@ Default output for this step:
 
 Do not skip this step for promising topics, publish-ready drafts, or strong rewritten topics.
 
-### Step 4.2: Editorial Pass
+### Step 4.15: Draft Version A
+
+Use `article-writing` to produce Version A: the first full structurally complete draft.
+At this point, do not assume the article is already the final winner.
+Version A exists to make the mechanism, scenes, and section carry visible enough for a stronger second pass.
+
+Default output for this step:
+1. full Version A draft
+2. one sentence stating what Version A does best
+3. one sentence stating what Version A still lacks
+
+### Step 4.2: Principle-Guided Version B Rewrite
+
+After Version A is complete, run `wechat-content-principles` on the draft itself, not only on the topic plan.
+Use it to diagnose:
+1. where the first-screen discomfort is still weak
+2. where the deeper mechanism is undernamed or too early
+3. whether the core distinction is fully carrying the article
+4. which carry lines are present but not yet strong enough
+5. where the ending pressure is still soft
+
+Then produce Version B using those modification results.
+Version B should not be a cosmetic polish pass.
+It should be a stronger public-account version that more fully obeys the locked principles.
+
+Default output for this step:
+1. principle-based modification notes
+2. full Version B draft
+3. one sentence stating what improved from Version A to Version B
+
+### Step 4.25: Draft Comparison And Winner Selection
+
+If Version A and Version B are both viable, run `wechat-draft-comparison` before editorial finalization.
+Use the comparison to decide which version is stronger for:
+- reading through
+- likes
+- follows
+- shares
+
+Comparison should output:
+1. winning version
+2. why it wins for this audience
+3. what the losing version still contributes
+4. 3 to 7 reusable rules to fold back into future drafts
+
+Only after the winning version is chosen should the workflow continue into the final Editorial Pass.
+
+### Step 4.3: Editorial Pass
 
 Before visual packaging, run one editing pass focused on publishability rather than idea-generation.
 This pass should improve the article without changing its core voice.
@@ -399,6 +475,7 @@ Editorial Pass goals:
 3. carrying-line selection -> identify and sharpen the lines most likely to be screenshotted or forwarded
 4. ending pressure -> harden the final move if the ending is correct but too soft
 5. platform readability -> improve mobile reading rhythm without flattening the voice
+6. paragraph density -> reduce unnecessary one-line paragraphs and merge broken thoughts into stronger 2 to 4 sentence body paragraphs where possible
 
 If a draft is already strong, the editorial pass should still produce:
 - one thing to tighten
@@ -409,7 +486,7 @@ If a draft is already strong, the editorial pass should still produce:
 Editorial Pass is not complete if it only returns suggestions.
 It must output a directly usable revised version of the article body after the edit pass.
 
-### Step 4.25: Writing Principle Capture
+### Step 4.35: Writing Principle Capture
 
 After the editorial pass and before visual packaging, run `wechat-content-principles` again.
 
@@ -434,7 +511,7 @@ After the draft passes the editorial pass, quality gate, and score threshold, co
 
 Use `baoyu-markdown-to-html` here when:
 - the article is considered publish-ready
-- the user wants a公众号-compatible HTML version
+- the user wants a???-compatible HTML version
 - the article should move from strong draft into delivery-ready asset form
 
 Output:
@@ -450,8 +527,8 @@ Only run it after the article is already worth publishing.
 After publication formatting, package the article with a proper cover.
 
 Use `baoyu-cover-image` when:
-- the article is a `主文题` or `引流题`
-- the article is likely to be used as a正式公众号 piece
+- the article is a `???` or `???`
+- the article is likely to be used as a????? piece
 - the article needs a stronger first-impression asset
 
 Before choosing the final cover direction, read `wechat-visual-presets.md` and pick the preset that matches the article's role.
@@ -704,12 +781,13 @@ Run in this order:
 
 If the topic is worth writing, continue with:
 4. Writing Principle Lock using `wechat-content-principles`
-5. draft the article
-6. editorial pass
-7. Writing Principle Capture using `wechat-content-principles`
-8. score the draft
-9. if multiple viable versions exist, run `wechat-draft-comparison`
-10. finalize the publish-ready version
+5. draft Version A using `article-writing`
+6. run `wechat-content-principles` on Version A and produce Version B
+7. if both versions are viable, run `wechat-draft-comparison`
+8. run the final Editorial Pass on the chosen winner
+9. Writing Principle Capture using `wechat-content-principles`
+10. score the draft
+11. finalize the publish-ready version
 
 For Writing Principle Lock, output:
 - first-screen discomfort
@@ -951,6 +1029,13 @@ Keep a short note showing:
 - source topic
 - intended publishing role
 - whether the derivative is for引流, authority, conversion, or repurposing
+
+
+
+
+
+
+
 
 
 

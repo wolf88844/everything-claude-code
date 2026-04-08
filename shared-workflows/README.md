@@ -1,4 +1,4 @@
-# Shared Workflows
+﻿# Shared Workflows
 
 This directory is the shared source of truth for your cross-computer Codex content workflows.
 
@@ -60,6 +60,7 @@ This prevents the shared repo version and the local runtime version from driftin
 ## Recommended Structure
 
 Treat these as the main shared workflows:
+Treat these as the main workflows:
 - `content-workflow-manager`
 - `personal-ip-strategy`
 - `social-inspiration-workflow`

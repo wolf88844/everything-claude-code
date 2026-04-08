@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 const os = require("os");
 
@@ -7,7 +7,10 @@ const sourceRoot = path.join(repoRoot, "shared-workflows");
 const targetRoot = path.join(os.homedir(), ".codex", "skills");
 
 const workflows = [
+  "content-workflow-manager",
   "wechat-growth-workflow",
+  "wechat-content-principles",
+  "wechat-draft-comparison",
   "social-inspiration-workflow",
   "xiaohongshu-content",
   "personal-ip-strategy",

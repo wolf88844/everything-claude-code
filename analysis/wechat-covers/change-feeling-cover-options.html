@@ -1,0 +1,277 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeChat Cover Options</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "PingFang SC", serif;
+      background: #f3efe8;
+      color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      padding: 32px;
+    }
+    .wrap {
+      width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .cover {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(23, 23, 23, 0.12);
+      padding: 34px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .label {
+      font-family: "Segoe UI", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .title {
+      font-size: 42px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      max-width: 92%;
+      white-space: pre-line;
+    }
+    .sub {
+      font-family: "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      opacity: 0.78;
+      max-width: 88%;
+    }
+    .brand {
+      font-family: "Segoe UI", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      opacity: 0.78;
+    }
+
+    .option-a {
+      background: radial-gradient(circle at 75% 20%, rgba(255,255,255,0.88), rgba(255,255,255,0) 28%), linear-gradient(145deg, #ebe4d8 0%, #d8d0c2 100%);
+    }
+    .option-a::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      bottom: -120px;
+      border-radius: 50%;
+      background: rgba(87, 89, 87, 0.08);
+    }
+    .option-a::after {
+      content: "";
+      position: absolute;
+      left: 34px;
+      bottom: 120px;
+      width: 180px;
+      height: 8px;
+      background: #7f6758;
+      border-radius: 999px;
+      box-shadow: 0 18px 0 #b69b7f, 0 36px 0 #d7c2a8;
+      opacity: 0.75;
+    }
+
+    .option-b {
+      background: linear-gradient(180deg, #191d23 0%, #2b323b 100%);
+      color: #f5f1ea;
+    }
+    .option-b .title {
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      font-size: 38px;
+      letter-spacing: -0.03em;
+    }
+    .option-b .sub, .option-b .label, .option-b .brand { color: rgba(245,241,234,0.84); }
+    .compare {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .compare .card {
+      border-radius: 18px;
+      padding: 16px 14px;
+      min-height: 170px;
+    }
+    .compare .left { background: rgba(244, 180, 92, 0.15); border: 1px solid rgba(244, 180, 92, 0.35); }
+    .compare .right { background: rgba(146, 215, 190, 0.13); border: 1px solid rgba(146, 215, 190, 0.35); }
+    .compare h4 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .compare p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.55;
+      white-space: pre-line;
+      opacity: 0.92;
+    }
+
+    .option-c {
+      background: linear-gradient(180deg, #eef3f8 0%, #d7e1eb 100%);
+      color: #111827;
+    }
+    .option-c .title {
+      font-size: 36px;
+      max-width: 82%;
+    }
+    .desk {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 48%;
+      background: linear-gradient(180deg, rgba(10,25,40,0) 0%, rgba(14, 29, 44, 0.08) 22%, rgba(14, 29, 44, 0.15) 100%);
+    }
+    .laptop {
+      position: absolute;
+      right: 26px;
+      bottom: 62px;
+      width: 250px;
+      height: 158px;
+      border-radius: 18px 18px 12px 12px;
+      background: #dfe7ef;
+      border: 6px solid #314457;
+      box-shadow: 0 20px 30px rgba(32, 48, 64, 0.18);
+      overflow: hidden;
+    }
+    .screen {
+      padding: 18px;
+      font-family: "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #243447;
+    }
+    .screen .tiny {
+      font-size: 12px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .notebook {
+      position: absolute;
+      left: 34px;
+      bottom: 48px;
+      width: 188px;
+      height: 230px;
+      border-radius: 18px;
+      background: #fbfaf6;
+      box-shadow: 0 20px 28px rgba(52, 66, 80, 0.12);
+      transform: rotate(-7deg);
+      padding: 22px 18px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .notebook h5 {
+      margin: 0 0 16px;
+      font-size: 16px;
+      color: #48596b;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .notebook .line {
+      height: 7px;
+      background: #c5d2de;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+    .notebook .line.short { width: 70%; }
+    .dot {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(104, 141, 177, 0.18);
+    }
+    .d1 { top: 78px; right: 86px; }
+    .d2 { top: 118px; right: 140px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="cover option-a">
+      <div>
+        <div class="label">Option A / Quiet Diagnostic</div>
+      </div>
+      <div class="title">很多人真正想要的
+不是改变</div>
+      <div>
+        <div class="sub">更像公众号封面。克制、安静、轻焦虑，重点打“你以为自己在变，其实只是停在开始感里”。</div>
+        <div class="brand">凶凶熊 · 公众号封面方向</div>
+      </div>
+    </section>
+
+    <section class="cover option-b">
+      <div>
+        <div class="label">Option B / Mechanism Contrast</div>
+        <div class="title">你上瘾的
+不是改变</div>
+      </div>
+      <div class="compare">
+        <div class="card left">
+          <h4>改变感</h4>
+          <p>列计划
+买书
+报课
+学新东西
+立刻觉得自己在变</p>
+        </div>
+        <div class="card right">
+          <h4>真改变</h4>
+          <p>重复
+留下
+接续
+不归零
+一开始没什么感觉</p>
+        </div>
+      </div>
+      <div class="brand">更像机制卡片，可截图转发</div>
+    </section>
+
+    <section class="cover option-c">
+      <div class="dot d1"></div>
+      <div class="dot d2"></div>
+      <div>
+        <div class="label">Option C / Technical Scene</div>
+        <div class="title">你只是迷恋
+开始的感觉</div>
+      </div>
+      <div class="desk"></div>
+      <div class="notebook">
+        <h5>new start</h5>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line"></div>
+        <div class="line short"></div>
+        <div class="line"></div>
+      </div>
+      <div class="laptop">
+        <div class="screen">
+          <div class="tiny">draft.md</div>
+          从今天开始
+          <br>学新框架
+          <br>整理经验
+          <br>重新拉起来
+        </div>
+      </div>
+      <div class="brand">更贴你的技术人成长主线，场景感更强</div>
+    </section>
+  </div>
+</body>
+</html>

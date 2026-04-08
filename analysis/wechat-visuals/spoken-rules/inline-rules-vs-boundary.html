@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rules vs Boundary</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 900px; height: 1200px; overflow: hidden; font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; background: linear-gradient(180deg, #f5f1e8 0%, #ece4d7 100%); color: #1f262d; }
+    .canvas { position: relative; width: 900px; height: 1200px; padding: 72px 70px; }
+    .eyebrow { font-size: 22px; letter-spacing: 0.18em; color: rgba(31, 38, 45, 0.58); }
+    .title { margin-top: 28px; width: 620px; font-size: 64px; line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 78px; }
+    .card { min-height: 640px; border-radius: 32px; padding: 34px 30px; box-shadow: 0 16px 36px rgba(24, 35, 44, 0.08); }
+    .left { background: linear-gradient(180deg, #fffaf2 0%, #f6eedf 100%); border: 1px solid rgba(31, 38, 45, 0.08); }
+    .right { background: linear-gradient(180deg, #182635 0%, #25384a 100%); color: #f3efe7; }
+    .card-title { font-size: 34px; font-weight: 700; margin-bottom: 26px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { position: relative; padding-left: 24px; margin-bottom: 22px; font-size: 26px; line-height: 1.5; }
+    li::before { content: ""; position: absolute; left: 0; top: 14px; width: 9px; height: 9px; border-radius: 50%; background: currentColor; opacity: 0.65; }
+    .footer { position: absolute; left: 70px; bottom: 80px; width: 720px; font-size: 28px; line-height: 1.55; color: rgba(31, 38, 45, 0.76); }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="eyebrow">文内机制卡 01</div>
+    <div class="title">规则告诉你哪里能走，<br>边界告诉你哪里最好别走</div>
+    <div class="grid">
+      <div class="card left">
+        <div class="card-title">明规则</div>
+        <ul>
+          <li>写在系统里</li>
+          <li>流程上能提</li>
+          <li>入口清楚可见</li>
+          <li>理论上人人适用</li>
+          <li>负责“看起来完整”</li>
+        </ul>
+      </div>
+      <div class="card right">
+        <div class="card-title">真实边界</div>
+        <ul>
+          <li>写在语气里</li>
+          <li>写在停顿里</li>
+          <li>写在那句“这种别提了”里</li>
+          <li>决定这件事到底能不能发生</li>
+          <li>负责“现实里怎么运转”</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">很多公司不是没有制度，而是制度和边界从来不是一回事。</div>
+  </div>
+</body>
+</html>
